@@ -1,0 +1,809 @@
+/* ==========================================
+   PROYECTO: CARTA PARA ORIANA
+   Estilo: Minimalista + Kuromi
+   Colores: Lila, blanco y morado
+========================================== */
+
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f5f0ff;
+    --purple: #9575c9;
+    --dark-purple: #594276;
+    --light-purple: #e9dfff;
+    --text: #40364d;
+    --white: #ffffff;
+    --pink: #f3d9f0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* 2. PRIMERA PANTALLA */
+
+.welcome-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, #e9dcff 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #e3d5ff 0%, transparent 35%),
+        #f8f5ff;
+}
+
+
+/* 3. TARJETA DE BIENVENIDA */
+
+.welcome-card {
+    width: 100%;
+    max-width: 470px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 55px 45px;
+
+    border: 1px solid #e1d4f5;
+    border-radius: 28px;
+
+    text-align: center;
+    position: relative;
+
+    box-shadow:
+        0 20px 60px rgba(117, 91, 157, 0.10);
+
+    animation: appear 1s ease;
+
+    transition: opacity 0.6s ease,
+                transform 0.6s ease;
+}
+
+.welcome-card.welcome-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+
+/* 4. DETALLES SUPERIORES */
+
+.top-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--purple);
+}
+
+.line {
+    width: 25px;
+    height: 1px;
+    background: #c9b8e7;
+}
+
+
+/* 5. DECORACIONES KUROMI */
+
+.kuromi-decoration {
+    font-size: 38px;
+    margin-bottom: 18px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.kuromi-sticker {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.kuromi-skull {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+
+    color: #b39bd7;
+    font-size: 17px;
+    opacity: 0.6;
+}
+
+.decor {
+    position: absolute;
+    color: #b9a5dd;
+    pointer-events: none;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.decor-one {
+    top: 15%;
+    left: 17%;
+    font-size: 35px;
+}
+
+.decor-two {
+    bottom: 17%;
+    right: 17%;
+    font-size: 40px;
+    animation-delay: 1s;
+}
+
+.decor-three {
+    top: 22%;
+    right: 20%;
+    font-size: 24px;
+    animation-delay: 2s;
+}
+
+
+/* 6. CORAZÓN Y TEXTOS */
+
+.heart-icon {
+    margin-top: 25px;
+
+    font-size: 39px;
+    color: #a17bc9;
+
+    animation: heartbeat 2s infinite;
+}
+
+.little-text {
+    color: #a28ac9;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(38px, 7vw, 52px);
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin-top: 15px;
+    color: var(--text);
+}
+
+h1 span {
+    color: #8967b9;
+    font-style: italic;
+}
+
+.description {
+    max-width: 290px;
+
+    margin: 20px auto 35px;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #8a8199;
+}
+
+
+/* 7. CAMPO DEL CÓDIGO */
+
+.access-section {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.access-section label {
+    font-size: 12px;
+    color: var(--dark-purple);
+
+    text-align: left;
+    margin-left: 3px;
+}
+
+.access-section input {
+    width: 100%;
+    padding: 16px;
+
+    border: 1px solid #e3d9f2;
+    border-radius: 12px;
+
+    outline: none;
+    background: #faf8ff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    text-align: center;
+    color: var(--text);
+
+    transition: 0.3s;
+}
+
+.access-section input:focus {
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 0 3px rgba(155, 131, 201, 0.12);
+}
+
+
+/* 8. BOTÓN PRINCIPAL */
+
+.access-section button {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #8062ac;
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.access-section button span {
+    margin-left: 8px;
+    font-size: 17px;
+}
+
+.access-section button:hover {
+    background: var(--dark-purple);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(102, 81, 142, 0.2);
+}
+
+.access-section button:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+
+/* 9. MENSAJES Y PIE DE TARJETA */
+
+.error-message {
+    display: none;
+
+    color: #c17c91;
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+.error-message.show {
+    display: block;
+    animation: appear 0.3s ease;
+}
+
+.bottom-message {
+    margin-top: 40px;
+
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+
+    color: #9d83bd;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   10. SEGUNDA PANTALLA: CARTA
+========================================== */
+
+.memory-screen {
+    display: none;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 65px 20px;
+
+    background:
+        radial-gradient(circle at 10% 10%, #eee5ff, transparent 35%),
+        #f8f5ff;
+
+    animation: appear 1s ease;
+}
+
+.memory-screen.active {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 10;
+    overflow-y: auto;
+}
+
+
+/* 11. ENCABEZADO DE LA CARTA */
+
+.memory-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.memory-header p,
+.gallery-heading > p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #9279b8;
+}
+
+.mini-sticker {
+    font-size: 21px;
+}
+
+
+/* 12. IMAGEN KUROMI */
+
+.kuromi-sticker {
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* 13. CONTENEDOR DE LA CARTA */
+
+.letter-container {
+    max-width: 650px;
+    margin: auto;
+
+    padding: 45px 50px;
+
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e9dff5;
+    border-radius: 8px 8px 22px 8px;
+
+    box-shadow:
+        0 15px 45px rgba(93, 69, 132, 0.09);
+}
+
+
+/* 14. ENCABEZADO INTERNO */
+
+.letter-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #a18abb;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.letter-container h2,
+.gallery-heading h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #514365;
+
+    margin-top: 35px;
+}
+
+.letter-container h2 em,
+.gallery-heading h2 em {
+    color: #997bc4;
+}
+
+
+/* 15. TEXTO DE LA CARTA */
+
+.letter-decoration {
+    margin: 25px 0;
+
+    color: #b49bd7;
+    letter-spacing: 10px;
+}
+
+.letter-text {
+    color: #766b83;
+
+    font-size: 14px;
+    line-height: 2;
+}
+
+.letter-signature {
+    margin-top: 30px;
+
+    color: #8e73b8;
+
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.letter-sticker {
+    position: absolute;
+
+    right: 25px;
+    bottom: 20px;
+
+    font-size: 28px;
+}
+
+
+/* ==========================================
+   16. GALERÍA DE FOTOGRAFÍAS
+========================================== */
+
+.gallery-section {
+    max-width: 900px;
+    margin: 100px auto 0;
+}
+
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.gallery-heading h2 {
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+
+/* 17. DISTRIBUCIÓN DE POLAROIDS */
+
+.polaroid-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 230px));
+
+    justify-content: center;
+
+    gap: 55px 45px;
+
+    padding: 20px 10px;
+}
+
+
+/* 18. MARCOS DE FOTOGRAFÍAS */
+
+.polaroid {
+    position: relative;
+
+    background: white;
+
+    padding: 12px 12px 30px;
+
+    box-shadow:
+        0 8px 25px rgba(65, 47, 90, 0.13);
+
+    transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 2;
+}
+
+.polaroid img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    background: #eee7f7;
+}
+
+.polaroid p {
+    margin-top: 13px;
+
+    text-align: center;
+
+    color: #766586;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+}
+
+
+/* 19. INCLINACIÓN DE LAS POLAROIDS */
+
+.polaroid-one {
+    transform: rotate(-5deg);
+}
+
+.polaroid-two {
+    transform: rotate(4deg);
+}
+
+.polaroid-three {
+    transform: rotate(3deg);
+}
+
+.polaroid-four {
+    transform: rotate(-4deg);
+}
+
+
+/* 20. CINTA DECORATIVA */
+
+.polaroid::before {
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 18px;
+
+    background: rgba(191, 170, 225, 0.48);
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-4deg);
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   21. MENSAJE FINAL
+========================================== */
+
+.final-message {
+    text-align: center;
+
+    margin: 100px auto 30px;
+}
+
+.final-message > span {
+    font-size: 35px;
+}
+
+.final-message h2 {
+    margin-top: 20px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    color: #695387;
+}
+
+.final-message p {
+    color: #9385a3;
+
+    font-size: 13px;
+
+    margin: 15px 0;
+}
+
+.final-message div {
+    color: #9a7ec2;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   22. BOTÓN DE MÚSICA
+========================================== */
+
+.music-button {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #ded2f1;
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--dark-purple);
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(102, 81, 142, 0.12);
+
+    transition: 0.3s;
+
+    z-index: 30;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==========================================
+   23. ANIMACIONES
+========================================== */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* ==========================================
+   24. DISEÑO RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .welcome-container {
+        padding: 18px;
+    }
+
+    .welcome-card {
+        padding: 45px 25px;
+    }
+
+    .decor-one {
+        left: 5%;
+    }
+
+    .decor-three {
+        right: 7%;
+    }
+
+    .decor-two {
+        right: 6%;
+    }
+
+    .music-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Carta */
+
+    .memory-screen {
+        padding: 45px 16px;
+    }
+
+    .letter-container {
+        padding: 35px 25px;
+    }
+
+    .letter-container h2 {
+        font-size: 32px;
+    }
+
+    /* Fotografías */
+
+    .polaroid-gallery {
+        gap: 35px 20px;
+    }
+
+    .polaroid {
+        padding: 8px 8px 23px;
+    }
+
+    .polaroid p {
+        font-size: 11px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 29px;
+    }
+
+    /* Mensaje final */
+
+    .final-message h2 {
+        font-size: 25px;
+    }
+
+}
+
+.polaroid-empty {
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #a58abf;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    border: 1px dashed #cbb4df;
+    opacity: 0.8;
+}
+
+/* ===================================
+   CONTROL DE PANTALLAS
+=================================== */
+
+.memory-screen {
+    display: none;
+    width: 100%;
+}
+
+.music-button {
+    display: none;
+}
+
+/* ==========================================
+   FIN DEL PROYECTO
+========================================== */
